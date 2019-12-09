@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <h3>Agregar Alumno</h3>
+    <div>
+
+        <form action="#" method="post"
+              th:object="${alumno}"
+              th:action="@{/alumno/save}"
+        >
+
+
+
+            <div class="form-group">
+                <label for="apellidoPaterno">Apellido Paterno</label>
+                <input type="text" id="apellidoPaterno"
+                       class="form-controller"
+                       placeholder="Apellido Paterno"
+                       th:field="*{apellidoPaterno}">
+            </div>
+
+
+            <div class="form-group">
+                <label for="appellidoMaterno">Apellido Materno</label>
+                <input type="text" id="appellidoMaterno"
+                       class="form-controller"
+                       placeholder="Apellido Materno"
+                       th:field="*{apellidoMaterno}">
+            </div>
+
+            <div class="form-group">
+                <label for="nombreAlumno">Nombre Alumno</label>
+                <input type="text" id="nombreAlumno"
+                       class="form-controller"
+                       placeholder="Nombre Alumno"
+                       th:field="*{nombreAlumno}">
+            </div>
+            <!--<div class="form-group">
+                <label for="codAlojamiento">Codigo de Alojamiento</label>
+                <input type="text" id="codAlojamiento"
+                       class="form-controller"
+                       placeholder="ingrese Codigo de Alojamiento"
+                       th:field="*{codAlojamiento}">
+            </div>
+            <div class="form-group">
+                <label for="numeroDeHabitaciones">Numero de Habitaciones</label>
+                <input type="number" id="numeroDeHabitaciones"
+                       class="form-controller"
+                       placeholder="ingrese Numero de Habitaciones"
+                       th:field="*{numeroDeHabitaciones}">
+            </div>
+            <div class="form-group">
+                <label for="ubigeo">Ubigeo</label>
+                <input type="number" id="ubigeo"
+                       class="form-controller"
+                       placeholder="ingrese ubigeo"
+                       th:field="*{ubigeo}">
+            </div>-->
+            <button type="submit" class="btn btn-primary">
+                Agregar alumno
+            </button>
+
+
+
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

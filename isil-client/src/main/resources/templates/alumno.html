@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <title>Listado de Alumnos</title>
+</head>
+<body>
+<div class="container">
+    <h3>Listado de Alumnos</h3>
+    <div class="col-md-12" >
+        <a th:href="@{/alumno/add}" class="btn btn-primary">Agregar Alumno</a>
+    </div>
+    <div th:switch="alumnos">
+        <div th:case="*">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">identificado</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apellido Materno</th>
+                    <th scope="col">Nombres</th>
+                    <!--<th scope="col">Codigo de Alojamiento</th>
+                    <th scope="col">Numero de Habitaciones</th>
+                    <th scope="col">Ubigeo</th>-->
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="alu : ${alumno}">
+                    <th scope="row" th:text="${alu.idAlumno}"></th>
+                    <td th:text="${alu.apellidoPaterno}"></td>
+                    <td th:text="${alu.apellidoMaterno}"></td>
+                    <td th:text="${alu.nombreAlumno}"></td>
+                   <!-- <td th:text="${alu.codAlojamiento}"></td>
+                    <td th:text="${alu.numeroDeHabitaciones}"></td>
+                    <td th:text="${alu.ubigeo}"></td>-->
+
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <a th:href="@{/alumno/edit/{id} (id=${alu.idAlumno}) }"
+                               class="btn btn-primary btn-sm">Editar</a>
+                            <a th:href="@{/alumno/delete/{id} (id=${alu.idAlumno}) }"
+                               class="btn btn-danger btn-sm">Eliminar</a>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
